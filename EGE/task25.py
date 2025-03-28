@@ -145,25 +145,55 @@
 
 '''
 
-def delitpr(x):
-    d = 1
+# def delitpr(x):
+#     d = 1
 
-    for n in range(1, int(x**0.5)+1):
-        if x % n == 0:
-            d = 0
+#     for n in range(1, int(x**0.5)+1):
+#         if x % n == 0:
+#             d = 0
 
-    return d
+#     return d
 
-for x in range(800000, 802001):
-    d = set()
-    for n in range(1, int(x**0.5)+1):
-        if x % n == 0 and delitpr(n):
-            d.add(n)
-            d.add(x//n)
+# for x in range(800000, 802001):
+#     d = set()
+#     for n in range(1, int(x**0.5)+1):
+#         if x % n == 0 and delitpr(n):
+#             d.add(n)
+#             d.add(x//n)
     
-    proiz = 1
-    for i in d:
-        proiz *= i
+#     proiz = 1
+#     for i in d:
+#         proiz *= i
 
-    if len(d) >= 2 and proiz % sum(d) == 0: 
-        print(x, proiz // sum(d))
+#     if len(d) >= 2 and proiz % sum(d) == 0: 
+#         print(x, proiz // sum(d))
+
+
+
+'''
+Пусть R - сумма различных натуральных делителей целого числа, не считая единицы и самого числа.
+Напишите программу, которая перебирает целые числа, большие 500 000, в порядке возрастания и ищет среди них такие, для которых R оканчивается на цифру 9.
+В ответе запишите в первом столбце таблицы первые пять найденных чисел в порядке возрастания, а во втором столбце - соответствующие им значения R.
+
+Например, для числа 20 R = 2 + 4 + 5 + 10 = 21.
+
+Количество строк в таблице для ответа избыточно
+'''
+
+
+# def delit(x):
+#     d = set()
+#     for n in range(2, int(x**0.5)+1):
+    
+#         if x % n == 0 and n != x: 
+#             d.add(n)
+#             d.add(x//n)
+
+#     return sum(d)
+
+
+# for x in range(500_000, 500_500):
+#     r = delit(x)
+
+#     if r % 10 == 9:
+#         print(x, r)
