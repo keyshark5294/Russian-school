@@ -37,3 +37,23 @@ for x in range(2):
             for w in range(2):
                 print(x, y, z, w, ' ', f_1(x, y, z, w), ' ',f_2(x, y, z, w))
 
+
+
+
+
+from itertools import *
+
+def f(x, y, w, z):
+    return 'условие'
+
+for a1, a2, a3, a4, a5, a6 in product([0, 1], repeat=6):
+    t = [
+        (1, a1, a2, a3),
+        (1, 1, a4, 1),
+        (1, a5, a5, 1)
+    ]
+
+    if len(t) == len(set(t)):
+        for p in permutations('xywz'):
+            if [f(**dict(zip(p, r))) for r in t] == [0, 0, 0]:
+                print(p)
